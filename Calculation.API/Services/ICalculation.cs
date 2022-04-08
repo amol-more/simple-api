@@ -1,7 +1,8 @@
-﻿namespace Calculation.API.Services
+﻿using System.Numerics;
+namespace Calculation.API.Services
 {
     public interface ICalculation
     {
-        public long Add(long value1, long value2);
+        public BigInteger Add(BigInteger value1, BigInteger value2);
     }
 }

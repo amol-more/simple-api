@@ -1,6 +1,6 @@
 ﻿using Calculation.API.Services;
 using Microsoft.AspNetCore.Mvc;
-
+using System.Numerics;
 namespace Calculation.API.Controllers
 {
     [Route("/api/[controller]")]
@@ -19,12 +19,12 @@ namespace Calculation.API.Controllers
         {
             try
             {
-                long result = 0;
+                BigInteger result = 0;
                 if (value1 == null || value2 == null)
                 {
                     return BadRequest();
                 }
-                if (long.TryParse(value1.Trim(), out long addition1) && long.TryParse(value2.Trim(), out long addition2))
+                if (BigInteger.TryParse(value1.Trim(), out BigInteger addition1) && BigInteger.TryParse(value2.Trim(), out BigInteger addition2))
                 {
                     result = _calculation.Add(addition1, addition2);
                 }
